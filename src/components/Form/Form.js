@@ -15,7 +15,7 @@ function Form(props) {
 useEffect(function() {
   async function getAppData() {
 
-    const requests = await fetch('http://localhost:3001/api/requests')
+    const requests = await fetch('https://my-sdk-backend.herokuapp.com/api/requests')
     .then(res => res.json());
 
     setState(prevState => ({
@@ -31,7 +31,7 @@ useEffect(function() {
 async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const request = await fetch('http://localhost:3001/api/requests', {
+      const request = await fetch('https://my-sdk-backend.herokuapp.com/api/requests', {
         method: 'POST', 
         headers: {
            'content-type': 'Application/json'
@@ -53,7 +53,7 @@ async function handleSubmit(e) {
     }
   
       
-    const request = await fetch('http://localhost:3001/api/requests', {
+    const request = await fetch('https://my-sdk-backend.herokuapp.com/api/requests', {
       method: 'POST', 
       headers: {
          'content-type': 'Application/json'
